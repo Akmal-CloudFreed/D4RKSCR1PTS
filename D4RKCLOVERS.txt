@@ -1,0 +1,143 @@
+posit = CFrame.new(0,0,0)
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Frame2 = Instance.new("Frame")
+local TextLabel2 = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local exit = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local rbon = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local rboff = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local open = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+ScreenGui.Parent = game.CoreGui
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Frame.Position = UDim2.new(0.376310915, 0, 0.408588946, 0)
+Frame.Size = UDim2.new(0, 180, 0, 120)
+Frame.Visible = false
+Frame.Active = true
+Frame.Draggable = true
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(103, 103, 103)
+TextLabel.Size = UDim2.new(0, 180, 0, 44)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = [[ MH Clover Farm By Thwartedbrute#8188]]
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = false
+TextLabel.TextSize = 20.000
+TextLabel.TextWrapped = true
+UICorner.Parent = TextLabel
+UICorner_2.Parent = Frame
+exit.Name = "exit"
+exit.Parent = Frame
+exit.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+exit.Position = UDim2.new(0.935000002, 0, 0, 0)
+exit.Size = UDim2.new(0, 26, 0, 22)
+exit.Font = Enum.Font.SourceSansBold
+exit.Text = "X"
+exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+exit.TextScaled = true
+exit.TextSize = 14.000
+exit.TextWrapped = true
+UICorner_3.Parent = exit
+rbon.Name = "rbon"
+rbon.Parent = Frame
+rbon.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+rbon.Position = UDim2.new(0.175, 0, 0.389261752, 0)
+rbon.Size = UDim2.new(0, 117, 0, 32)
+rbon.Font = Enum.Font.SourceSansBold
+rbon.Text = "Toggle"
+rbon.TextColor3 = Color3.fromRGB(0, 0, 0)
+rbon.TextScaled = true
+rbon.TextSize = 14.000
+rbon.TextWrapped = true
+local BoolValue = false
+function Click(mouse)
+if BoolValue == false then
+    BoolValue = true
+    rbon.Text = "On"
+    rbon.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+else
+    BoolValue = false
+    rbon.Text = "Toggle"
+    rbon.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+end
+end
+rbon.MouseButton1Down:connect(Click)
+rbon.MouseButton1Down:connect(function()
+    wait() 
+    game:GetService("ProximityPromptService").PromptShown:Connect(function(prompt)
+        if BoolValue == true then
+            wait(0.3)
+            fireproximityprompt(prompt)
+        end
+    end)
+    while wait(0.5) do
+        if BoolValue == true then
+            for i,v in pairs(game.Workspace.Clovers:GetDescendants()) do
+                if v.Parent.Name == "Clovers" then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                end
+            end
+        end
+    end
+end)
+UICorner_4.Parent = rbon
+open.Name = "open"
+open.Parent = ScreenGui
+open.BackgroundColor3 = Color3.fromRGB(154, 65, 255)
+open.Position = UDim2.new(0.0154225789, 0, 0.7, 0)
+open.Size = UDim2.new(0, 140, 0, 40)
+open.Font = Enum.Font.SourceSansBold
+open.Text = "OPEN"
+open.TextColor3 = Color3.fromRGB(0, 0, 0)
+open.TextScaled = true
+open.TextSize = 14.000
+open.TextWrapped = true
+UICorner_6.Parent = open
+local function NEFKV_fake_script() -- exit.LocalScript 
+	local script = Instance.new('LocalScript', exit)
+	local frame = script.Parent.Parent
+	script.Parent.MouseButton1Click:Connect(function()
+		frame.Visible = false
+		script.Parent.Parent.Parent.open.Visible = true
+	end)
+end
+coroutine.wrap(NEFKV_fake_script)()
+local function WBLSWW_fake_script() -- open.LocalScript 
+	local script = Instance.new('LocalScript', open)
+	local frame = script.Parent.Parent.Frame
+	script.Parent.MouseButton1Click:Connect(function()
+	frame.Visible = true
+	script.Parent.Visible = false
+	end)
+end
+coroutine.wrap(WBLSWW_fake_script)()
+local intro = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("TextLabel")
+local UIST = Instance.new("UIStroke")
+intro.Parent = game:GetService("CoreGui")
+Frame.Parent = intro
+Frame.BorderColor3 = Color3.new(255,0,0)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 1
+Frame.Size = UDim2.new(1, 0, 0, 100)
+Frame.Position = UDim2.new(0, 0, -0.4, 0)
+ImageLabel.Parent = Frame
+ImageLabel.BorderColor3 = Color3.fromRGB(255,0,0)
+ImageLabel.TextColor3 = Color3.fromRGB(255, 0, 50)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.Position = UDim2.new(0, 0, 0, 0)
+ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+ImageLabel.Text = "██████╗░░░██╗██╗██████╗░██╗░░██╗░██████╗░█████╗░██████╗░░░███╗░░██████╗░████████╗░██████╗\n██╔══██╗░██╔╝██║██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔══██╗░████║░░██╔══██╗╚══██╔══╝██╔════╝\n██║░░██║██╔╝░██║██████╔╝█████═╝░╚█████╗░██║░░╚═╝██████╔╝██╔██║░░██████╔╝░░░██║░░░╚█████╗░\n██║░░██║███████║██╔══██╗██╔═██╗░░╚═══██╗██║░░██╗██╔══██╗╚═╝██║░░██╔═══╝░░░░██║░░░░╚═══██╗\n██████╔╝╚════██║██║░░██║██║░╚██╗██████╔╝╚█████╔╝██║░░██║███████╗██║░░░░░░░░██║░░░██████╔╝\n╚═════╝░░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░░░░░░░╚═╝░░░╚═════╝░"
+UIST.Parent = ImageLabel
+Frame:TweenPosition(UDim2.new(0, 0, 0.2, 0), "Out", "Elastic", 3)
+wait(3.01)
+Frame:TweenPosition(UDim2.new(0, 0, 1.5, 0), "Out", "Elastic", 5)
+wait(5.01)
+intro:Destroy()
